@@ -9,40 +9,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- Clean, subtle background (no harsh colors) -->
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Ambient Background -->
     <div class="mesh-bg"></div>
+    <div class="aurora">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
 
     <!-- Minimal Navbar -->
     <nav class="glass-nav">
         <a href="#" class="logo">78Creative<span>.</span></a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#skills">Skills</a>
+        <div class="nav-links" id="nav-links">
+            <a href="#about" class="nav-link active">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
         <div class="nav-right">
             <a href="#contact" class="nav-btn"><i class='bx bxs-paper-plane'></i> Let's Talk</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Bento Grid Container (Clean and Organized) -->
+    <!-- Bento Grid Container -->
     <main class="bento-container">
-        
+
         <!-- Hero Box -->
-        <div class="bento-box hero-box col-span-2 row-span-2 relative-hero">
+        <div class="bento-box hero-box col-span-2 row-span-2 relative-hero" id="about">
             <div class="hero-glow"></div>
             <div class="hero-content">
                 <div class="greeting-badge">
-                    👋 Hi, I'm Wael Mohamed
+                    <span class="pulse-dot"></span>
+                    Hi, I'm Wael Mohamed
                 </div>
-                <h1>Graphic  <span class="gradient-text">Designer</span> </h1>
+                <h1>Graphic <span class="gradient-text">Designer</span></h1>
                 <p class="desc">A creative designer passionate about crafting modern and impactful visuals. Based in Syria, I specialize in branding, advertising, social media, and digital design, with a strong focus on quality, creativity, and attention to detail.</p>
                 <div class="hero-btns">
                     <a href="#contact" class="primary-btn">
                         Hire Me <i class='bx bx-right-arrow-alt'></i>
                     </a>
-                    <a  href="Wael_Mohamed_CV.pdf" class="secondary-btn" target="_blank">
+                    <a href="Wael_Mohamed_CV.pdf" class="secondary-btn" target="_blank">
                         View CV
                     </a>
                 </div>
@@ -51,7 +66,7 @@
 
         <!-- Photo / Art Box -->
         <div class="bento-box photo-box col-span-1 row-span-2">
-            <img src="https://d.top4top.io/p_3866ee72l1.jpg" alt="Abstract Art">
+            <img src="images/photo.jpg" alt="Abstract Art">
             <div class="photo-overlay">
                 <span><i class='bx bxs-star'></i> Creative Designer</span>
             </div>
@@ -80,12 +95,16 @@
         <!-- Services Box -->
         <div class="bento-box services-box col-span-2 row-span-2" id="services">
             <div class="box-header">
-                <h3>My Services</h3>
-                <i class='bx bx-category'></i>
+                <div class="box-title">
+                    <span class="section-tag">What I Do</span>
+                    <h3>My Services</h3>
+                </div>
+                <span class="box-index">01</span>
             </div>
             <div class="services-list">
                 <div class="srv-row">
-                    <div class="srv-icon"><i class='bx bx-image-alt'></i></div>
+                    <span class="srv-num">01</span>
+                    <div class="srv-icon brand"><i class='bx bx-image-alt'></i></div>
                     <div class="srv-text">
                         <h4>Brand Identity</h4>
                         <p>Logos, Visual Identity & Branding</p>
@@ -93,7 +112,8 @@
                     <i class='bx bx-chevron-right srv-arrow'></i>
                 </div>
                 <div class="srv-row">
-                    <div class="srv-icon"><i class='bx bx-share-alt'></i></div>
+                    <span class="srv-num">02</span>
+                    <div class="srv-icon social"><i class='bx bx-share-alt'></i></div>
                     <div class="srv-text">
                         <h4>Social Media Design</h4>
                         <p>Posts, Stories & Marketing Campaigns</p>
@@ -101,7 +121,8 @@
                     <i class='bx bx-chevron-right srv-arrow'></i>
                 </div>
                 <div class="srv-row">
-                    <div class="srv-icon"><i class='bx bx-video'></i></div>
+                    <span class="srv-num">03</span>
+                    <div class="srv-icon yt"><i class='bx bx-video'></i></div>
                     <div class="srv-text">
                         <h4>Thumbnail YouTube</h4>
                         <p>Gaming, Football, Vlogs & More</p>
@@ -109,7 +130,8 @@
                     <i class='bx bx-chevron-right srv-arrow'></i>
                 </div>
                 <div class="srv-row">
-                    <div class="srv-icon"><i class='bx bx-paint'></i></div>
+                    <span class="srv-num">04</span>
+                    <div class="srv-icon poster"><i class='bx bx-paint'></i></div>
                     <div class="srv-text">
                         <h4>Digital Posters & Ads</h4>
                         <p>Banners, Prints & Promotions</p>
@@ -120,132 +142,205 @@
         </div>
 
         <!-- Software Box -->
-        <div class="bento-box software-box col-span-2 row-span-2">
+        <div class="bento-box software-box col-span-2 row-span-2" id="skills">
             <div class="box-header">
-                <h3>Software Arsenal</h3>
-                <i class='bx bx-laptop'></i>
+                <div class="box-title">
+                    <span class="section-tag">My Toolkit</span>
+                    <h3>Software Arsenal</h3>
+                </div>
+                <span class="box-index blue-index">02</span>
             </div>
             <div class="software-grid-2">
                 <div class="sw-square">
                     <div class="sw-logo ps"><img src="icons/photoshop.svg" width="26"></div>
                     <span class="sw-name">Photoshop</span>
-                    <div class="sw-percent">100%</div>
                 </div>
                 <div class="sw-square">
                     <div class="sw-logo ai"><img src="icons/illustrator.svg" width="26"></div>
                     <span class="sw-name">Illustrator</span>
-                    <div class="sw-percent">70%</div>
                 </div>
                 <div class="sw-square">
                     <div class="sw-logo fg"><img src="icons/figma.svg" width="24"></div>
                     <span class="sw-name">Figma</span>
-                    <div class="sw-percent">50%</div>
                 </div>
                 <div class="sw-square">
                     <div class="sw-logo ca"><img src="icons/canva.svg" width="30"></div>
                     <span class="sw-name">Canva Pro</span>
-                    <div class="sw-percent">90%</div>
                 </div>
                 <div class="sw-square">
                     <div class="sw-logo gemini"><img src="icons/gemini.svg" width="26"></div>
                     <span class="sw-name">Gemini AI</span>
-                    <div class="sw-percent">99%</div>
                 </div>
                 <div class="sw-square">
                     <div class="sw-logo chat"><img src="icons/chatgpt.svg" width="26"></div>
                     <span class="sw-name">ChatGPT</span>
-                    <div class="sw-percent">99%</div>
                 </div>
             </div>
         </div>
 
-        <!-- Portfolio Gallery Box (Scrollable) -->
+        <!-- Portfolio Gallery Box (Tabbed) -->
         <div class="bento-box portfolio-box col-span-4 row-span-2" id="portfolio">
             <div class="box-header flex-header">
-                <div>
+                <div class="box-title">
+                    <span class="section-tag">Portfolio</span>
                     <h3 class="gradient-text-alt">Featured Masterpieces</h3>
-                    <p class="subtitle-text">Swipe to explore my latest creations</p>
+                    <p class="subtitle-text">Explore my work across identity, social media & branding</p>
                 </div>
-                <div class="header-controls">
-                    <button class="nav-btn-round" id="prev-btn"><i class='bx bx-chevron-left'></i></button>
-                    <button class="nav-btn-round" id="next-btn"><i class='bx bx-chevron-right'></i></button>
+                <div class="portfolio-tabs" id="portfolio-tabs">
+                    <button class="pf-tab active" data-filter="identity"><i class='bx bxs-brush'></i>Logo & Identity</button>
+                    <button class="pf-tab" data-filter="social"><i class='bx bxs-share-alt'></i>Social Media</button>
+                    <button class="pf-tab" data-filter="brand"><i class='bx bxs-magic-wand'></i>Brand Designs</button>
+                    <button class="pf-tab" data-filter="yt"><i class='bx bxs-video'></i>YouTube Thumbnails</button>
                 </div>
             </div>
-            <div class="portfolio-slider">
-                <!-- Replace with your actual project images -->
-                <div class="portfolio-item">
-                    <img src="https://l.top4top.io/p_3847laalt1.png" alt="Brand Identity">
-                    <div class="item-overlay">
-                        <div class="item-info">
-                            <h4>Brand Identity</h4>
+            <div class="portfolio-grid" id="portfolio-grid">
+
+                <figure class="pf-card" data-category="identity">
+                    <span class="pf-tag">Identity</span>
+                    <img src="images/logo 1.png" alt="Logo Design 1">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>Logo Design 1</h4>
                             <span>Logo & Visual Identity</span>
                         </div>
                         <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://c.top4top.io/p_3847ycfor1.png" alt="Social Media Design">
-                    <div class="item-overlay">
-                        <div class="item-info">
+                    </figcaption>
+                </figure>
+
+                <figure class="pf-card" data-category="identity">
+                    <span class="pf-tag">Identity</span>
+                    <img src="images/logo 2.png" alt="Logo Design 2">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>Logo Design 2</h4>
+                            <span>Logo & Visual Identity</span>
+                        </div>
+                        <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
+                    </figcaption>
+                </figure>
+
+                <figure class="pf-card" data-category="identity">
+                    <span class="pf-tag">Identity</span>
+                    <img src="images/logo 3.png" alt="Logo Design 3">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>Logo Design 3</h4>
+                            <span>Logo & Visual Identity</span>
+                        </div>
+                        <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
+                    </figcaption>
+                </figure>
+
+                <figure class="pf-card" data-category="social">
+                    <span class="pf-tag">Social Media</span>
+                    <img src="images/redbull-ad.png" alt="Redbull Ad">
+                    <figcaption>
+                        <div class="pf-info">
                             <h4>Redbull Ad</h4>
                             <span>Social Media Design</span>
                         </div>
-                        <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://d.top4top.io/p_3847x059p1.png" alt="Social Media Design">
-                    <div class="item-overlay">
-                        <div class="item-info">
-                            <h4>Brand Identity Ad</h4>
-                            <span>Social Media Design</span>
-                        </div>
-                        <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://l.top4top.io/p_38471gba81.png" alt="Social Media Design">
-                    <div class="item-overlay">
-                        <div class="item-info">
-                            <h4>Uber Ad</h4>
-                            <span>Social Media Design</span>
-                        </div>
-                        <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://j.top4top.io/p_38472iiqk1.png" alt="YouTube Thumbnail">
-                    <div class="item-overlay">
-                        <div class="item-info">
-                            <h4>Content Creator Design</h4>
+                        <a href="https://www.behance.net/gallery/236881677/Red-Bull-Advertising-Concept-" target="_blank" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
+                    </figcaption>
+                </figure>
+
+                <figure class="pf-card" data-category="yt">
+                    <span class="pf-tag">Thumbnail</span>
+                    <img src="images/content-creator.png" alt="Content Creator Design">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>Content Creator</h4>
                             <span>YouTube Thumbnail</span>
                         </div>
                         <a href="#" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </figcaption>
+                </figure>
 
-        <!-- Contact & Social Box -->
-        <div class="bento-box contact-box col-span-4 row-span-1" id="contact">
-            <div class="contact-info">
-                <h2>Let's Work Together 🚀</h2>
-                <p>Available for freelance projects. Drop me an email or say hi on social media!</p>
-            </div>
-            <div class="contact-links">
-                <div class="social-icons">
-                    <a href="https://www.behance.net/Wael78" class="s-icon behance" title="Behance"><i class='bx bxl-behance'></i></a>
-                    <a href="https://www.instagram.com/78_creative" class="s-icon instagram" title="Instagram"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://twitter.com/78Creative" class="s-icon x-twitter" title="Twitter"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://discord.com/users/w.78" class="s-icon discord" title="Discord"><i class='bx bxl-discord-alt'></i></a>
-                </div>
+                <figure class="pf-card" data-category="social">
+                    <span class="pf-tag">Social Media</span>
+                    <img src="images/brand-identity-ad.png" alt="City Cafe">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>City Cafe</h4>
+                            <span>Social Media Design</span>
+                        </div>
+                        <a href="https://www.behance.net/gallery/237048603/City-Caf-Ice-Coffee-Visual-Ad" target="_blank" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
+                    </figcaption>
+                </figure>
+
+                <figure class="pf-card" data-category="social">
+                    <span class="pf-tag">Social Media</span>
+                    <img src="images/uber-ad.png" alt="Uber Ad">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>Uber Ad</h4>
+                            <span>Social Media Design</span>
+                        </div>
+                        <a href="https://www.behance.net/gallery/226788315/_" target="_blank" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
+                    </figcaption>
+                </figure>
+
+                <figure class="pf-card" data-category="brand">
+                    <span class="pf-tag">Branding</span>
+                    <img src="images/brand.png" alt="RAY E-Sports">
+                    <figcaption>
+                        <div class="pf-info">
+                            <h4>RAY E-Sports</h4>
+                            <span>Brand Design</span>
+                        </div>
+                        <a href="https://www.behance.net/gallery/253735107/RAY-E-Sports" target="_blank" class="view-btn"><i class='bx bx-right-top-arrow-circle'></i></a>
+                    </figcaption>
+                </figure>
+
             </div>
         </div>
 
     </main>
 
-    <footer class="glass-footer">
-        <p>&copy; 2026 Wael Mohamed. All rights reserved.</p>
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Back to top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
+    <!-- Animated specialties marquee -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Logo Design</span><i class='bx bxs-star'></i>
+                <span>Brand Identity</span><i class='bx bxs-star'></i>
+                <span>Social Media Posts</span><i class='bx bxs-star'></i>
+                <span>YouTube Thumbnails</span><i class='bx bxs-star'></i>
+                <span>Digital Posters</span><i class='bx bxs-star'></i>
+                <span>Advertising</span><i class='bx bxs-star'></i>
+            </div>
+            <div class="marquee-content">
+                <span>Logo Design</span><i class='bx bxs-star'></i>
+                <span>Brand Identity</span><i class='bx bxs-star'></i>
+                <span>Social Media Posts</span><i class='bx bxs-star'></i>
+                <span>YouTube Thumbnails</span><i class='bx bxs-star'></i>
+                <span>Digital Posters</span><i class='bx bxs-star'></i>
+                <span>Advertising</span><i class='bx bxs-star'></i>
+            </div>
+        </div>
+    </div>
+
+    <footer class="glass-footer" id="contact">
+        <div class="footer-inner">
+            <a href="#" class="logo">78Creative<span>.</span></a>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-icons footer-socials">
+                <a href="https://www.behance.net/Wael78" class="s-icon behance" title="Behance"><i class='bx bxl-behance'></i></a>
+                <a href="https://www.instagram.com/78_creative" class="s-icon instagram" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://twitter.com/78Creative" class="s-icon x-twitter" title="Twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://discord.com/users/w.78" class="s-icon discord" title="Discord"><i class='bx bxl-discord-alt'></i></a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Wael Mohamed. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
